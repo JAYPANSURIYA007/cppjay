@@ -3,19 +3,20 @@ using namespace std;
 
 int main(){
     int a,b,c;
-    printf("enter the  A number:");
-    scanf("%d",&a);
-     printf("enter the  B number:");
-    scanf("%d",&b);
-     printf("enter the  C number:");
-    scanf("%d",&c);
-    
+    cout<<"enter the A number:";
+    cin>>a;
 
+    cout<<"enter the  B number:";
+    cin>>b;
+   
+   cout<<"enter the  C number:";
+    cin>>c;
+   
     if(a>b){
-        printf("a is large");
+    cout<<"a is large";
     }else if(b>c){
-        printf("b is large");
+        cout<<"b is large";
     }else{
-        printf("c is large");
+        cout<<"c is large";
     }
 }
