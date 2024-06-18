@@ -13,7 +13,7 @@ using namespace std;
     int main(){
         int total;
         total=sum1();
-        cout<<"the total of  a is:"<< total ;
+        cout<<"the total of a is:"<< total ;
 
     }
 
