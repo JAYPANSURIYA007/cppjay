@@ -5,7 +5,7 @@ class student{
 private:
 int adno;
 char sname[20];
-float eng,maths,sci;
+float int eng,int maths,int sci;
 float total;
 float ctotal(int eng,int maths,int sci);
 
