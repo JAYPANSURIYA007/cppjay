@@ -16,12 +16,15 @@ float calfuel(int flightnumber, float distance ,float fuel );
         
         cout<<"enter the int  flightnumber:";
         cin>>flightnumber;
+       
         cout<<"enter the distance:";
         cin>>distance;
         // cout<<"enter the fuel:";
         // cin>>fuel;
+       
         cout<<"enter the destination:";
         cin>>destination;
+       
         if(distance<=1000){
             cout<<"fuel is 500";
         }else if(distance>1000 && distance<=2000){
@@ -36,14 +39,22 @@ float calfuel(int flightnumber, float distance ,float fuel );
     
     cout<<"flightnumber:"<<flightnumber<<endl;
     cout<<"distance:"<<distance<<endl;
+    
     // cout<<"fuel:"<<fuel<<endl;
+    
     cout<<"destination:"<<destination<<endl;
     cout<<"calculate"<<calfuel( flightnumber, distance ,fuel);
+    
     if(distance<=1000){
+    
             cout<<"fuel is 500";
+    
         }else if(distance>1000 && distance<=2000){
+   
             cout<<"fuel is 1100";
+  
         }else{
+  
             cout<<"fuel is 2200";
         }
         
