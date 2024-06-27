@@ -19,8 +19,8 @@ float calcavg(int innings,int notout,int runs);
         cin>>bname;
         cout<<"enter the innings:";
         cin>>innings;
-        cout<<"enter the centerreqd:";
-        cin>>notocenterreqdut;
+        cout<<"enter the notout:";
+        cin>>notout;
         cout<<"enter the runs:";
         cin>>runs;
         calcavg( innings, notout, runs);
@@ -36,7 +36,7 @@ float calcavg(int innings,int notout,int runs);
     cout<<"betavg:"<<betavg;
     }
 };
-float batsman:: calavg(int innings,int notout,int runs){
+float batsman:: calcavg(int innings,int notout,int runs){
     return betavg=runs/(innings-notout);
 }
 int main(){

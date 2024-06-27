@@ -5,31 +5,44 @@ class repot{
 private:
 int adno;
 char sname[20];
-float marks[5];
-float total;
+float marks[3];
+float total=0;
+
 
 float ctotal(int eng,int maths,int sci);
 
 public:    
 void getdata(){
-    for(int j=0;j<5;j++){
+    for(int j=1;j<=3;j++){
        cout<<"enter the adnumber:";       
         cin>>adno;
         cout<<"enter the sname:";
-        cin>>sname;
+        cin>>sname; 
+       for(int k=1;k<=3;k++){
         cout<<"enter marks:";
-        cin>>marks[j];
-    }
+        cin>>marks[k];
 
+    
+total+=marks[k];
+       }
+cout<<"total:"<<total<<endl;
+       }
+    
 }
 void showdata(){
-    for(int j=0;j<5;j++){
+    for(int j=1;j<=3;j++){
         cout<<"enter marks:";
-        cin>>marks[j];
      cout<<"adno:"<<adno<<endl;
    cout<<"sname:"<<sname<<endl;
+   cout<<"total:"<<total<<endl;
+   int k;
+        total+=marks[k];
+        cin>>marks[k];
+            
+            
         }
-
+        //  cout<<"total"<<ctotal(eng,maths,sci)<<endl;
+            // int j;
 }
 
 

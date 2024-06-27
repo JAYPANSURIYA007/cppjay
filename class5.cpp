@@ -19,9 +19,7 @@ float calfuel(int flightnumber, float distance ,float fuel );
        
         cout<<"enter the distance:";
         cin>>distance;
-        // cout<<"enter the fuel:";
-        // cin>>fuel;
-       
+             
         cout<<"enter the destination:";
         cin>>destination;
        
