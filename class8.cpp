@@ -1,61 +1,57 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class repot{
+class repot
+{
 
 private:
-int adno;
-char sname[20];
-float marks[3];
-float total=0;
+    int adno;
+    char sname[20];
+    float marks[5];
+    float total = 0;
 
+    float ctotal();
 
-float ctotal(int eng,int maths,int sci);
+public:
+    void getdata()
+    {
 
-public:    
-void getdata(){
-    for(int j=1;j<=3;j++){
-       cout<<"enter the adnumber:";       
-        cin>>adno;
-        cout<<"enter the sname:";
-        cin>>sname; 
-       for(int k=1;k<=3;k++){
-        cout<<"enter marks:";
-        cin>>marks[k];
+        cout << "enter the adnumber:";
+        cin >> adno;
+        cout << "enter the sname:";
+        cin >> sname;
+        for (int k = 0; k < 5; k++)
+        {
+            cout << "enter marks:";
+            cin >> marks[k];
 
-    
-total+=marks[k];
-       }
-cout<<"total:"<<total<<endl;
-       }
-    
-}
-void showdata(){
-    for(int j=1;j<=3;j++){
-        cout<<"enter marks:";
-     cout<<"adno:"<<adno<<endl;
-   cout<<"sname:"<<sname<<endl;
-   cout<<"total:"<<total<<endl;
-   int k;
-        total+=marks[k];
-        cin>>marks[k];
-            
-            
+            total += marks[k];
         }
+        cout << "total:" << total << endl;
+    }
+    void showdata()
+    {
+      
+            cout << "enter marks:";
+            cout << "adno:" << adno << endl;
+            cout << "sname:" << sname << endl;
+            cout << "total:" << total << endl;
+         
+           
+           
+      
         //  cout<<"total"<<ctotal(eng,maths,sci)<<endl;
-            // int j;
-}
-
-
+        // int j;
+    }
 };
-float repot::  ctotal(int eng,int maths,int sci){
-    return eng+maths+sci;
-}
 
-int main(){
- class repot st[3];
-for(int i=0;i<3;i++){
- st[i].getdata();
-st[i].showdata();
-}
-return 0;
+
+int main()
+{
+    class repot st[5];
+    for (int i = 0; i < 5; i++)
+    {
+        st[i].getdata();
+        st[i].showdata();
+    }
+    return 0;
 }
