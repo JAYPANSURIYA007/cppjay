@@ -2,28 +2,32 @@
 using namespace std;
 class bank{
 
-     private:
-      int ATM_pin,mobil_number,pin,code,cash;
+     protected:
+      int ATM_pin,pin,code,cash,mobil_number;
       float atm_balance=0.0;
-      int account_number;
-      char name[30],email[50];
+      int amount,balance=5000;
+    
+      
       public:
 
       void account(){
-        cout<<"ENTER THE NAME:"<<endl;
-        cin>>name;
-        cout<<"ENTER THE MOBILE NO.:"<<endl;
-        cin>>mobil_number;
-        cout<<"ENTER YOUR E-MAIL ADDRESS:"<<endl;
-        cin>>email;
-        cout<<"CREATE YOUR PIN NUMBER:"<<endl;
+        
+        cout<<"ENTER YOUR PIN NUMBER:";
         cin>>pin;
-      }
+        if(pin==0000){
+          cout<<"JAY ACCOUNT";
+        }else{
+          cout<<"EXIT";
+        
+        }
+        
+        }
+      
 
        void pin1(){
-        cout<<"ENTER THE MOBILE NO.:"<<endl;
+        cout<<"ENTER THE MOBILE NO.:";
         cin>>mobil_number;
-        cout<<"ENTER THE VARIFICATION CODE:"<<endl;
+        cout<<"ENTER THE VARIFICATION CODE:";
         cin>>code;
         cout<<"CREAT A NEW  PIN NUMBER:";
         cin>>ATM_pin;
@@ -35,63 +39,85 @@ class bank{
        void withdrawal(){
         
         cout<<"ENTER YOUR ATM CARD"<<endl;
-       
-        cout<<"ENTER THE AMMOUNT:"<<endl;
-        cin>>cash;
-         cout<<"ENTER THE  PIN NUMBER:";
+        cout<<"ENTER THE  PIN NUMBER:";
         cin>>ATM_pin;
-        }
+        cout<<"ENTER THE AMMOUNT:";
+        cin>>cash;
+       
+                if (balance=(balance-cash)){
+       
+          cout<<"BALANCE IS:"<<balance<<endl;
+        }else 
+            { 
+                cout <<balance; 
+            } 
+       }
+       
 
       void deposite(){
         cout<<"ENTER YOUR ATM CARD"<<endl;
-        cout<<"ENTER THE ACCOUNT NUMBER:";
-        cin>>account_number;
-        cout<<"ENTER THE AMMOUNT:"<<endl;
+      
+         cout<<"ENTER THE  PIN NUMBER:";
+        cin>>ATM_pin;
+        cout<<"ENTER THE AMMOUNT:";
         cin>>cash;
-         }
+         if(pin==0000){
+          cout<<"JAY ACCOUNT"<<endl;
+        }else{
+          cout<<"EXIT"<<endl;
+        }
+        if (balance=(balance+cash)){
+          
+          cout<<"BALANCE IS:"<<balance<<endl;
+        }else 
+            { 
+                cout <<balance; 
+            } 
+         
 
+}
          void exit(){
             cout<<"THANKS FOR VISIT";
          }
 };
 int main(){ 
-    class bank account(),pin1(),withdrawal(),deposite(),exit();
-    cout<<"  WELLCOME TO SBI   ";
+    class bank b;
+    cout<<"  WELLCOME TO SBI   "<<endl;
     int number;
     do{
-        cout<<"1:- CREAT ACCOUNT"<<endl;
+        cout<<endl<<"1:- CREAT ACCOUNT"<<endl;
         cout<<"2:- CREAT PIN"<<endl;
         cout<<"3:- CASH WITHDRAWAL"<<endl;
         cout<<"4:- CASH DEPOSITE"<<endl;
         cout<<"5:- EXIT"<<endl;
-        cout<<"Select a number:"<<endl;
+        cout<<"Select a number:";
         cin>>number;
+  cout<<"****************************************************************************************************************************"<<endl;      
             switch(number){
                 case 1:
-                account();
-                exit();
+                b.account();
                 break;
+  cout<<"****************************************************************************************************************************"<<endl;      
                
                 case 2:
-                pin1();
-                exit();
+                b.pin1();
                 break;
+  cout<<"****************************************************************************************************************************"<<endl;      
 
                 case 3:
-                withdrawal();
-                exit();
+                b.withdrawal();
                 break;
+  cout<<"****************************************************************************************************************************"<<endl;      
 
                 case 4:
-            
-            
-                deposite();
-                exit();
-                break;
+               b. deposite();
+               break;
+  cout<<"****************************************************************************************************************************"<<endl;      
 
                 case 5:
-                exit();
+                b.exit();
                 break;
+  cout<<"****************************************************************************************************************************"<<endl;      
 
 
                
@@ -99,10 +125,5 @@ int main(){
     
      } while(number!=5);
     
-    bank b;
-    b.account();
-    b.pin1();
-    b.withdrawal();
-    b.deposite();
-    b.exit();
+    
 }
