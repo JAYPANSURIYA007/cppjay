@@ -31,16 +31,10 @@ public:
     void showdata()
     {
       
-            cout << "enter marks:";
             cout << "adno:" << adno << endl;
             cout << "sname:" << sname << endl;
             cout << "total:" << total << endl;
          
-           
-           
-      
-        //  cout<<"total"<<ctotal(eng,maths,sci)<<endl;
-        // int j;
     }
 };
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 void print_menu();
-structer Answer{
+struct Answer{
   string dish_name;
   double dish_price;
   int qty;
@@ -13,14 +13,14 @@ structer Answer{
 };
 class Item{
   private:
-  striing Itam_name;
+  string Item_name;
   double Item_price;
 
   public:
   Item(){};
   Item(string name,double price)
   {
-    Item-name=name;
+    Item_name=name;
     Item_price=price;
   }
   Answer Calculator(int qty)
@@ -135,7 +135,7 @@ do
        }else if(choise=2)
        {
         int dish_number;
-        cout<<endl<<"ENYER DISH NUMBER :";
+        cout<<endl<<"ENTER DISH NUMBER :";
         cin>>dish_number;
         if(dish_number>31||dish_number<1)
         {
@@ -144,7 +144,87 @@ do
         goto start;
         }
         int QTY;
-        
+        cout<<endl
+        <<"ENTER QTY:";
+        cin>>QTY;
+        if(QTY<1)
+
+      {
+           cout<<endl
+        <<"Invild Input !"<<endl;
+        goto start;
+
+      } else{
+      cout<<endl
+      <<"*************************************************************************************************"
+      <<" ";
+
+      cout<<endl
+      <<"YOUR ORDDER HAS BEEN CONFIRED"<<endl
+      <<" ";
+
+      }
+      ItemNo[count]=item[dish_number].Calculator(QTY);
+      count++;
        }
+       else if(choise=4){
+        cout<<endl
+      <<"*************************************************************************************************"
+      <<endl
+      <<" ";
+      cout<<endl
+      <<"                                           HOTEL AMRUT                                "<<endl
+      <<"                                           102,Amipark Soc,kargilchowk surat          "<<endl
+      <<"                                          MOBILE No.:9638527401                       "<<endl
+      <<" ";
+
+      cout<<endl<<"Date: 09/07/2024"
+      <<" Time: 9:00"
+      <<" ";
+
+      double total=0;
+      cout<<" NO                     NAME              QTY                 PRICE        AMOUNT "<<endl
+      <<" ";
+        
+          cout<<endl
+      <<"*************************************************************************************************"
+      <<endl
+      <<" ";
+      for(int i=0;i<count;i++){
+        cout<<endl
+      <<i+1<<" "
+      <<setw(25)<<ItemNo[i].dish_name<<"        "<<setw(3)<<endl;
+      total+=ItemNo[i].total;
+   }
+       cout<<endl
+      <<"*************************************************************************************************"
+      <<endl
+      <<" ";
+      double GST =(total*18.0)/100.0;
+
+      cout<<endl<<" GST 18%  "
+      <<"                                      "<<GST<<endl;
+    cout<<endl
+      <<"*************************************************************************************************"
+      <<endl
+      <<" ";
+      total+=GST;
+      cout<<endl<<"          "
+      <<" TOTAL "
+      <<" ";
+
+    cout<<endl
+      <<"*************************************************************************************************"
+      <<endl
+      <<" ";
+
+      cout<<endl
+      <<"                          THANK YOU FOR VISIT   "
+      <<" ";
+       }
+       end:
+       cout<<" ";
+
+       } while(choise>0 & choise<5);
   return 0;
 }
