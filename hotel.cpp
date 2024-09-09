@@ -1,230 +1,327 @@
-#include<iostream>
-#include<cstring>
-#include<iomanip>
+#include <iostream>
+#include <cstring>
+#include <iomanip>
 
 using namespace std;
+
 void print_menu();
-struct Answer{
+
+struct Answer
+{
   string dish_name;
   double dish_price;
   int qty;
   double total;
-
 };
-class Item{
-  private:
+class Item
+{
+private:
   string Item_name;
   double Item_price;
 
-  public:
-  Item(){};
-  Item(string name,double price)
-  {
-    Item_name=name;
-    Item_price=price;
-  }
+public:
+  Item() {};
+  Item(string name, double price) : Item_name(name), Item_price(price) {}
+
+  // Item_price = price;
   Answer Calculator(int qty)
   {
     Answer result;
-  
-    result.dish_name=Item_name;
-    result.dish_price=Item_price;
-    result.qty=qty;
-    result.total=Item_price*qty;
+    result.dish_name = Item_name;
+    result.dish_price = Item_price;
+    result.qty = qty;
+    result.total = Item_price * qty;
+
     return result;
-}
-void print_Item_data()
-{
-  cout<<endl
-  <<"item name :"<<Item_name<<endl;
-  cout<<"item price :"<<Item_price;
-}
+  }
+
+  void print_Item_data()
+  {
+    cout << endl
+         << "ITEM NAME :" << Item_name << endl;
+    cout << "Item price:" << Item_price;
+  }
 };
-  
-  int main()
+
+int main()
 {
- Item item[26];
-    cout<<"*******************************HOTEL SKILL QODE*****************************"<<endl;
-    cout<<"*********************************FOOD MENU**********************************"<<endl;
-    
-    
+  Item item[26];
+  item[1] = Item("palak paneer", 170);
+  item[2] = Item("Paneer pakoda", 220);
+  item[3] = Item("VEg burger", 110);
+  item[4] = Item("Veg Grill Sandwich", 160);
+  item[5] = Item("Veg Fry rice", 350);
+  item[6] = Item("Veg biriyani", 350);
+  item[7] = Item("Mix Veg Pizzah", 450);
+  item[8] = Item("Jeera Rice", 160);
+  item[9] = Item("Potato Cheeps", 80);
+  item[10] = Item("Masala dosa", 90);
+  item[11] = Item("Momos", 90);
+  item[12] = Item("Frenki", 140);
+  item[13] = Item("Sweet corn", 110);
+  item[14] = Item("Gulab Jamun", 60);
+  item[15] = Item("Kulfi", 40);
+  item[16] = Item("Vanila Ice-cream", 110);
+  item[17] = Item("Chocolate cake", 500);
+  item[18] = Item("Thums-up", 35);
+  item[19] = Item("Mountain Duo", 30);
+  item[20] = Item("Maza", 35);
+  item[21] = Item("Sosayo", 25);
+  item[22] = Item("Millk", 50);
+  item[23] = Item("Chocolate Milk", 80);
+  item[24] = Item("Water", 30);
+  int choise;
+  int count = 0;
+  Answer ItemNo[50];
+  do
+  {
+  start:
+    cout << endl
+         << "**********************************************************************************************************"
+         << endl
+         << " ";
+    cout << endl
+         << "FOR Menu Press 1" << endl;
+    cout << "Oreder Dish Press 2" << endl;
+    cout << "Current Status press 3" << endl;
+    cout << "Make Bill press 4" << endl;
+    cout << "EXIT Press 0" << endl;
 
-        cout<<"NO.       DISH----------------------------------------PRICE"<<endl;
-        cout<<"1.        MANHURIYAM----------------------------------100/-"<<endl;
-        cout<<"2.        MANHAV SHUP---------------------------------160/-"<<endl;
-        cout<<"3.        MASALA PAPAD -------------------------------20/-"<<endl;
-        cout<<"4.        BUTTER ROTI---------------------------------20/-"<<endl;
-        cout<<"5.        NAAN----------------------------------------50/-"<<endl;
-        cout<<"6.        BUTTER NAAN --------------------------------₹70"<<endl;
-        cout<<"7.        KAJUKARI------------------------------------₹250"<<endl;
-        cout<<"8.        PANIR MASALA TADKA--------------------------₹230"<<endl;
-        cout<<"9.        PANIR BHURJI--------------------------------₹180"<<endl;
-        cout<<"10.       PANIR TIKKA --------------------------------₹270"<<endl;
-        cout<<"11.       PARRATHA------------------------------------₹40"<<endl;
-        cout<<"12.       MALAI KOFTA---------------------------------₹160"<<endl;
-        cout<<"13.       GULAB JAMUN---------------------------------₹150"<<endl;
-        cout<<"14.       KHIR----------------------------------------₹170"<<endl;
-        cout<<"15.       KULFI---------------------------------------₹100"<<endl;
-        cout<<"16.       RAJ BHOG------------------------------------₹300"<<endl;
-        cout<<"17.       COOKI AND CREAM-----------------------------₹200"<<endl;
-        cout<<"18.       BAJRANO ROTLO-------------------------------₹100"<<endl;
-        cout<<"19.       UNDHIYU-------------------------------------₹150"<<endl;
-        cout<<"20.       THUMBS UP-----------------------------------₹40"<<endl;
-        cout<<"21.       COCA KOLA-----------------------------------₹30"<<endl;
-        cout<<"22.       HOT BOURNVITA-------------------------------₹80"<<endl;
-        cout<<"23.       COLD BOURNVITA------------------------------₹70"<<endl;
-        cout<<"24.       WHISKEY-------------------------------------₹10000"<<endl;
-        cout<<"25.       LIQUER--------------------------------------₹5000"<<endl;
-        cout<<"26.       MASALA TEA----------------------------------₹50"<<endl;
-        cout<<"27.       TEA-----------------------------------------₹30"<<endl;
-        cout<<"28.       COFFE---------------------------------------₹50"<<endl;
-        cout<<"29.       CANGAN WATER--------------------------------₹50"<<endl;
-        cout<<"30.       BLACK WATER---------------------------------₹500"<<endl;
-        cout<<"31.       WATER---------------------------------------₹25"<<endl;
+    cout << endl
+         << "**********************************************************************************************************"
+         << endl
+         << " ";
 
-        int choise;
-        int count=0;
+    cout << endl
+         << "Enter Your choise :";
+    cin >> choise;
 
-        Answer ItemNo[50];
-    
-     
-do
-{
-  Start:
-
-    cout<<endl
-    <<"**************************************************************************************************"
-    <<endl
-    <<" ";
-
-    cout<<endl
-    <<"FOR MANU PRESS 1"<<endl;
-    cout<<"ORDER DISH PRESS 2"<<endl;
-    cout<<"SURRENT STATUS PRESS 3"<<endl;
-    cout<<"MAKE BILL PRESS 4"<<endl;
-    cout<<"EXIT PRESS 0"<<endl;
-
-    cout<<endl
-    <<"**************************************************************************************************"
-    <<endl
-    <<" ";
-    
-      cout<<endl
-      <<"*************************************************************************************************"
-      <<" ";
-      
-      cout<<endl
-      <<"ENTER YOUR CHOISE :";
-      cin>>choise;
-      
-      cout<<endl
-      <<"*************************************************************************************************"
-      <<" ";
-
-       if (choise<0||choise>4)
-       {
-        cout<<endl
-        <<"Invild Input !"<<endl;
-        goto start;
-       }else if (choise=0)
-       {
-        goto end;
-       }
-       else if(choise=1){
-        print_menu();
-       }else if(choise=2)
-       {
-        int dish_number;
-        cout<<endl<<"ENTER DISH NUMBER :";
-        cin>>dish_number;
-        if(dish_number>31||dish_number<1)
-        {
-           cout<<endl
-        <<"Invild Input !"<<endl;
-        goto start;
-        }
-        int QTY;
-        cout<<endl
-        <<"ENTER QTY:";
-        cin>>QTY;
-        if(QTY<1)
-
+    cout << endl
+         << "**********************************************************************************************************"
+         << endl
+         << " ";
+    if (choise < 0 || choise > 4)
+    {
+      cout << endl
+           << "Invilde Input !" << endl;
+      //   goto start;
+    }
+    else if (choise == 0)
+    {
+      goto end;
+    }
+    else if (choise == 1)
+    {
+      print_menu();
+    }
+    else if (choise == 2)
+    {
+      int Dish_Number;
+      cout << endl
+           << "Eneter Dish Number:";
+      cin >> Dish_Number;
+      if (Dish_Number > 25 || Dish_Number < 0)
       {
-           cout<<endl
-        <<"Invild Input !"<<endl;
+        cout << endl
+             << "Invild Input !" << endl;
         goto start;
-
-      } else{
-      cout<<endl
-      <<"*************************************************************************************************"
-      <<" ";
-
-      cout<<endl
-      <<"YOUR ORDDER HAS BEEN CONFIRED"<<endl
-      <<" ";
-
       }
-      ItemNo[count]=item[dish_number].Calculator(QTY);
+      int Qty;
+      cout << endl
+           << "Enter Qty :";
+      cin >> Qty;
+      if (Qty < 1)
+      {
+
+        cout << endl
+             << "Invild Input !" << endl;
+        goto start;
+      }
+      else
+      {
+        cout << endl
+             << "**********************************************************************************************************"
+             << endl
+             << " ";
+        cout << endl
+             << "Your Order has been confirmed" << endl
+             << " ";
+      }
+      ItemNo[count] = item[Dish_Number].Calculator(Qty);
       count++;
-       }
-       else if(choise=4){
-        cout<<endl
-      <<"*************************************************************************************************"
-      <<endl
-      <<" ";
-      cout<<endl
-      <<"                                           HOTEL AMRUT                                "<<endl
-      <<"                                           102,Amipark Soc,kargilchowk surat          "<<endl
-      <<"                                          MOBILE No.:9638527401                       "<<endl
-      <<" ";
+  
+    }
+else if (choise == 3)
+{
+  cout << endl
+             << " NO              NAME         QTY  PRICE AMOUNT" << endl
+       << " ";
+  for (int i = 0; i < count; i++)
+  {
+    cout << endl
+         << i + 1 << " "
+         << setw(24) << ItemNo[i].dish_name << "  "
+         << setw(3) << ItemNo[i].qty << " "
+         << setw(5) << ItemNo[i].dish_price << " "
+         << setw(6) << ItemNo[i].total << endl;
+  }
+  cout << " " << endl;
+}
+else if (choise == 4)
+{
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+  cout << endl
+       << "                                    PK PAIN RESTAURANT                     " << endl
+       << "                                    34/404 TATA HOUSING MOTI BHOYAN         " << endl
+       << "                                    MOBILE NO. 9638527410                  " << endl
+       << " ";
 
-      cout<<endl<<"Date: 09/07/2024"
-      <<" Time: 9:00"
-      <<" ";
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
 
-      double total=0;
-      cout<<" NO                     NAME              QTY                 PRICE        AMOUNT "<<endl
-      <<" ";
-        
-          cout<<endl
-      <<"*************************************************************************************************"
-      <<endl
-      <<" ";
-      for(int i=0;i<count;i++){
-        cout<<endl
-      <<i+1<<" "
-      <<setw(25)<<ItemNo[i].dish_name<<"        "<<setw(3)<<endl;
-      total+=ItemNo[i].total;
-   }
-       cout<<endl
-      <<"*************************************************************************************************"
-      <<endl
-      <<" ";
-      double GST =(total*18.0)/100.0;
+  cout << endl
+       << "       Date : 09/09/2024        " << endl
+       << "       Time : 11:30             " << endl
+       << " ";
 
-      cout<<endl<<" GST 18%  "
-      <<"                                      "<<GST<<endl;
-    cout<<endl
-      <<"*************************************************************************************************"
-      <<endl
-      <<" ";
-      total+=GST;
-      cout<<endl<<"          "
-      <<" TOTAL "
-      <<" ";
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
 
-    cout<<endl
-      <<"*************************************************************************************************"
-      <<endl
-      <<" ";
+  double total = 0;
+  cout << endl
+       << " NO        NAME            QTY   PRICE  AMOUNT" << endl
+       << " ";
 
-      cout<<endl
-      <<"                          THANK YOU FOR VISIT   "
-      <<" ";
-       }
-       end:
-       cout<<" ";
 
-       } while(choise>0 & choise<5);
-  return 0;
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+  for (int i = 0; i < count; i++)
+  {
+    cout << endl
+         << i + 1 << " "
+         << setw(24) << ItemNo[i].dish_name << "  "
+         << setw(3) << ItemNo[i].qty << " "
+         << setw(5) << ItemNo[i].dish_price << " "
+         << setw(6) << ItemNo[i].total << endl;
+          total += ItemNo[i].total;
+  }
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+  double GST = (total * 18.0) / 100;
+
+  cout << endl
+       << "            "
+       << "            GST 18% "<<setw(36)<< GST<<endl;
+   
+     cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+  total += GST;
+  cout << endl
+       << "                 "
+       << "      Total      "<<setw(48)<<total<<endl;
+       
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+  cout
+      << endl
+      << "                               Thank you  for visit        "
+      << " ";
+
+  cout
+      << endl
+      << "*********************************************************************************************************************"
+      << endl
+      << " ";
+}
+
+end : cout
+      << " ";
+}
+while (choise > 0 && choise < 5) ;
+
+return 0;
+}
+
+void print_menu()
+{
+  cout << endl
+       << "**************************************************Items*******************************************************************" << endl
+       << " ";
+
+  cout << endl
+       << "                                              MAIN COURSE                       "
+       << endl
+       << " ";
+
+  cout << endl
+       << "Number                  Item                              Price        " << endl
+       << endl
+       << "1                   palak paneer                          170           " << endl
+       << "2                   Paneer pakoda                         220           " << endl
+       << "3                   VEg burger                            110           " << endl
+       << "4                   Veg Grill Sandwich                    160           " << endl
+       << "5                   Veg Fry rice                          350           " << endl
+       << "6                   Veg biriyani                          350           " << endl
+       << "7                   Mix Veg Pizzah                        450           " << endl
+       << "8                   Jeera Rice                            160           " << endl
+       << "9                   Potato Cheeps                          80           " << endl
+       << "10                  Masala dosa                            90           " << endl
+       << "11                  Momos                                  90           " << endl
+       << "12                  Frenki                                140           " << endl
+       << "13                  Sweet corn                            110           " << endl
+       << " ";
+
+  cout << endl
+       << "*********************************************************************************************************************" << endl
+       << " ";
+  cout << endl
+       << "                                               DESERT                                " << endl
+       << " ";
+  cout << endl
+       << "Number                  Item                               Normal           " << endl
+       << "14                  Gulab Jamun                            60           " << endl
+       << "15                  Kulfi                                  40           " << endl
+       << "16                  Vanila Ice-cream                      110           " << endl
+       << "17                  Chocolate cake                        500           " << endl
+       << " ";
+  cout << endl
+       << "*********************************************************************************************************************" << endl
+       << " ";
+  cout << endl
+       << "                                               DRINKS                                             " << endl
+       << " ";
+
+  cout << endl
+       << "Number                  Item                               Normal        " << endl
+       << "18                  Thums-up                               35           " << endl
+       << "19                  Mountain Duo                           30           " << endl
+       << "20                  Maza                                   35           " << endl
+       << "21                  Sosayo                                 25           " << endl
+       << "22                  Millk                                  50           " << endl
+       << "23                  Chocolate Milk                         80           " << endl
+       << "24                  Water                                  30           " << endl
+
+       << " ";
 }
